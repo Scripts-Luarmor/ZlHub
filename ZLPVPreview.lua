@@ -282,7 +282,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/xspeedHub0/Zlhub/main/ZLPVPreview.lua"))()
+    local Players = game:GetService("Players")  local player = Players.LocalPlayer  local gui = Instance.new("ScreenGui") gui.Name = "ZLLoading" gui.Parent = player:WaitForChild("PlayerGui")  local circle = Instance.new("Frame") circle.Size = UDim2.new(0, 180, 0, 180) circle.Position = UDim2.new(0.5, -90, 0.5, -90) circle.BackgroundColor3 = Color3.fromRGB(20, 20, 20) circle.Parent = gui  local corner = Instance.new("UICorner") corner.CornerRadius = UDim.new(1, 0) corner.Parent = circle  local stroke = Instance.new("UIStroke") stroke.Color = Color3.fromRGB(255, 210, 0) stroke.Thickness = 4 stroke.Parent = circle  local title = Instance.new("TextLabel") title.Size = UDim2.new(1, 0, 0, 40) title.Position = UDim2.new(0, 0, 0.25, 0) title.BackgroundTransparency = 1 title.Text = "ZL HUB LOADING" title.TextColor3 = Color3.fromRGB(255, 220, 0) title.TextSize = 20 title.Font = Enum.Font.GothamBold title.Parent = circle  local percent = Instance.new("TextLabel") percent.Size = UDim2.new(1, 0, 0, 45) percent.Position = UDim2.new(0, 0, 0.52, 0) percent.BackgroundTransparency = 1 percent.Text = "0%" percent.TextColor3 = Color3.fromRGB(255, 255, 255) percent.TextSize = 30 percent.Font = Enum.Font.GothamBold percent.Parent = circle  for i = 1, 100 do     percent.Text = i .. "%"     task.wait(0.9) end  percent.Text = "100%"
 
     task.wait(1)
 
